@@ -3,6 +3,7 @@ import cv2
 import tensorflow as tf
 import pandas as pd
 
+
 def center_crop(img):
 
     width, height = img.shape[1], img.shape[0]  # process crop width and height for max available dimension
@@ -12,6 +13,7 @@ def center_crop(img):
     cw2, ch2 = int(crop_width/2), int(crop_height/2)
     crop_img = img[mid_y-ch2:mid_y+ch2, mid_x-cw2:mid_x+cw2]
     return crop_img
+
 
 # Carregar modelos
 detector = hub.load("https://tfhub.dev/tensorflow/efficientdet/lite2/detection/1")
